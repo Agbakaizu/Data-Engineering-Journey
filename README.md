@@ -82,7 +82,7 @@ INSERT INTO students (student_id, first_name, last_name, age, city)
 VALUES 
     (1, 'Dorcas',  'Agbakaizu', 23, 'Lagos'),
     (2, 'Alex',    'Cole',      21, 'Abuja'),
-    (3, 'Olumide', 'Adodo',     23, 'Ibadan'),
+    (3, 'Tomi',    'Richard',     23, 'Ibadan'),
     (4, 'Paul',    'Williams',  26, 'Enugu'),
     (5, 'Dera',    'Dapson',    24, 'Lagos');
 ```
