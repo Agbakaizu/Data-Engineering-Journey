@@ -95,7 +95,7 @@ SELECT * FROM students;
 ```
 <img width="321" height="124" alt="1" src="https://github.com/user-attachments/assets/a7ad853f-ce1e-408b-8719-46ea1e739a42" />
 
-```
+```sql
 -- Show specific columns only
 SELECT first_name, city FROM students;
 ```
@@ -107,19 +107,29 @@ SELECT first_name, city FROM students;
 -- Filter by city
 SELECT * FROM students
 WHERE city = 'Lagos';
+```
+<img width="313" height="62" alt="3" src="https://github.com/user-attachments/assets/ed0705cb-f311-40aa-83ce-4b32c1ae85c2" />
 
+```sql
 -- Filter by age
 SELECT first_name, age FROM students
 WHERE age = 23;
+```
+<img width="135" height="56" alt="4" src="https://github.com/user-attachments/assets/23762d09-2097-4e3f-8286-604687daf623" />
 
+```sql
 -- Filter by student ID
 SELECT * FROM students
 WHERE student_id = 3;
+```
+<img width="312" height="43" alt="5" src="https://github.com/user-attachments/assets/3c75a4be-8e18-40fb-82d9-d9aea142b711" />
 
+```sql
 -- Show specific columns with filter
 SELECT first_name, last_name FROM students
 WHERE city = 'Abuja';
 ```
+<img width="166" height="41" alt="6" src="https://github.com/user-attachments/assets/4bbcc79b-ac9b-49a0-bebb-7965f764f5c8" />
 
 #### AND / OR Conditions
 
@@ -127,15 +137,22 @@ WHERE city = 'Abuja';
 -- AND: both conditions must be true
 SELECT * FROM students
 WHERE age = 23 AND city = 'Lagos';
+```
+<img width="311" height="43" alt="7" src="https://github.com/user-attachments/assets/d21ce550-e970-4c1b-850f-4737126131cc" />
 
+```sql
 -- OR: at least one condition must be true
 SELECT * FROM students
 WHERE city = 'Lagos' OR city = 'Abuja';
+```
+<img width="307" height="78" alt="8" src="https://github.com/user-attachments/assets/69c1ece0-ee7a-4854-b82b-e9734195cc04" />
 
+```sql
 -- Comparison operator with AND
 SELECT * FROM students
 WHERE age > 22 AND city = 'Lagos';
 ```
+<img width="305" height="58" alt="9" src="https://github.com/user-attachments/assets/0c82fa49-4256-4c75-9b0a-f901ef554145" />
 
 #### ORDER BY — Sorting Results
 
@@ -143,7 +160,10 @@ WHERE age > 22 AND city = 'Lagos';
 -- Sort by age ascending (youngest first)
 SELECT * FROM students
 ORDER BY age ASC;
+```
+<img width="310" height="115" alt="10" src="https://github.com/user-attachments/assets/e06ba0f6-91b5-4c0a-b70d-61339b2466b6" />
 
+```sql
 -- Sort alphabetically by first name
 SELECT * FROM students
 ORDER BY first_name ASC;
