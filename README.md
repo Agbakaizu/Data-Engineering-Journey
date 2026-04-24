@@ -92,6 +92,7 @@ VALUES
 ```sql
 -- Show all data (* means all columns)
 SELECT * FROM students;
+<img width="321" height="124" alt="1" src="https://github.com/user-attachments/assets/6f389cee-06f9-4c6c-b88f-a269c4668dad" />
 
 -- Show specific columns only
 SELECT first_name, city FROM students;
