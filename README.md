@@ -92,12 +92,14 @@ VALUES
 ```sql
 -- Show all data (* means all columns)
 SELECT * FROM students;
+```
+<img width="321" height="124" alt="1" src="https://github.com/user-attachments/assets/a7ad853f-ce1e-408b-8719-46ea1e739a42" />
 
-<img width="321" height="124" alt="1" src="https://github.com/user-attachments/assets/6f389cee-06f9-4c6c-b88f-a269c4668dad" />
-
+```
 -- Show specific columns only
 SELECT first_name, city FROM students;
 ```
+<img width="148" height="119" alt="2" src="https://github.com/user-attachments/assets/6f664ba4-7fe9-4f53-af33-a00e1f3d8795" />
 
 #### Filtering with WHERE
 
