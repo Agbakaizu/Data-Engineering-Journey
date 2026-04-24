@@ -191,9 +191,6 @@ SELECT * FROM students
 WHERE first_name LIKE 'D%';      -- starts with D
 
 SELECT * FROM students
-WHERE first_name LIKE '%e';      -- ends with e
-
-SELECT * FROM students
 WHERE last_name LIKE '%o%';      -- contains o anywhere
 
 -- Combine LIKE with OR
