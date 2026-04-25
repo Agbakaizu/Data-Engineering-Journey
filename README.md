@@ -487,8 +487,7 @@ WITH lagos_patients AS (
 )
 SELECT * FROM lagos_patients;
 ```
-<img width="213" height="82" alt="42" src="https://github.com/user-attachments/assets/46e0c270-8c2c-4d0c-946d-e8a5a3dbf883" />
-
+<img width="213" height="76" alt="CTE 1" src="https://github.com/user-attachments/assets/82c17b1e-ecaf-4634-88cd-972704a9800e" />
 
 ```sql
 -- CTE: Senior patients
@@ -563,6 +562,7 @@ SELECT first_name, condition,
     ROW_NUMBER() OVER (PARTITION BY condition ORDER BY age ASC) AS row_num
 FROM patients;
 ```
+<img width="233" height="157" alt="windows 4" src="https://github.com/user-attachments/assets/79df6be3-2078-4aae-a2a8-88e377746948" />
 
 
 #### Views — Saved Virtual Tables
