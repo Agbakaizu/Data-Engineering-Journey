@@ -431,14 +431,14 @@ SELECT first_name, age
 FROM patients
 WHERE age > (SELECT AVG(age) FROM patients);
 ```
-<img width="384" height="77" alt="31" src="https://github.com/user-attachments/assets/6657bee1-2073-45fd-bfb1-2ce507f5e7fb" />
+<img width="137" height="76" alt="1-4" src="https://github.com/user-attachments/assets/b80c50b3-2830-4c8a-a836-7b8c0807519f" />
+
 
 ```sql
 -- Patients from same city as Chidi
 SELECT * FROM patients
 WHERE city = (SELECT city FROM patients WHERE first_name = 'Chidi');
 ```
-<img width="132" height="136" alt="32" src="https://github.com/user-attachments/assets/f830f34c-03a0-4dc1-856d-1823f92ef964" />
 
 ```sql
 -- Patients older than the youngest patient
@@ -446,7 +446,7 @@ SELECT first_name, age
 FROM patients
 WHERE age > (SELECT MIN(age) FROM patients);
 ```
-<img width="207" height="152" alt="33" src="https://github.com/user-attachments/assets/57e6a119-c4cf-495e-97c0-a8b8f8879fbd" />
+<img width="132" height="136" alt="32" src="https://github.com/user-attachments/assets/8895580b-b156-48cb-9f27-c2564a0aeb7f" />
 
 #### CASE WHEN — Conditional Logic
 
@@ -460,7 +460,8 @@ SELECT first_name, age,
     END AS age_group
 FROM patients;
 ```
-<img width="249" height="153" alt="34" src="https://github.com/user-attachments/assets/3a65998b-e26f-405e-8c01-3307823cadea" />
+<img width="132" height="136" alt="32" src="https://github.com/user-attachments/assets/6cab529f-797c-4100-aae1-dedc7e1c0c36" />
+
 
 ```sql
 -- Condition priority level
@@ -473,7 +474,7 @@ SELECT first_name, condition,
     END AS priority_level
 FROM patients;
 ```
-<img width="379" height="78" alt="35" src="https://github.com/user-attachments/assets/15303ea9-ac59-4fd6-b990-d8425be93a5b" />
+<img width="249" height="153" alt="34" src="https://github.com/user-attachments/assets/21ef5e02-1779-4344-a8df-9bef71c4fe97" />
 
 #### CTEs — Common Table Expressions
 
