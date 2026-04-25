@@ -607,7 +607,8 @@ END;
 EXEC GetPatientsByCity 'Lagos';
 EXEC GetPatientsByCity 'Abuja';
 ```
-<img width="375" height="185" alt="45" src="https://github.com/user-attachments/assets/7cba9311-6d13-4b4e-9047-7ce43a09f3bc" />
+<img width="396" height="175" alt="44" src="https://github.com/user-attachments/assets/4ccec7c7-4b4f-4e4c-9ad5-25d601b0c2de" />
+
 
 ```sql
 -- Procedure: Get patients by condition
@@ -622,7 +623,8 @@ END;
 EXEC GetPatientsByCondition 'Malaria';
 EXEC GetPatientsByCondition 'Diabetes';
 ```
-<img width="281" height="172" alt="46" src="https://github.com/user-attachments/assets/9390e890-78f1-42ce-a165-e901f2801031" />
+<img width="375" height="185" alt="45" src="https://github.com/user-attachments/assets/16fc56ce-9fc7-4c88-a867-4ca4290e171d" />
+
 
 ```sql
 -- Procedure: Get appointments by status
@@ -644,7 +646,7 @@ END;
 EXEC GetAppointmentsByStatus 'Completed';
 EXEC GetAppointmentsByStatus 'Cancelled';
 ```
-<img width="451" height="153" alt="47" src="https://github.com/user-attachments/assets/8ace9046-9480-47a5-bf98-59cd78ba4c41" />
+<img width="281" height="172" alt="46" src="https://github.com/user-attachments/assets/6886b6f5-0cce-4b8d-b68c-ad7efb7c2141" />
 
 ---
 
