@@ -440,6 +440,9 @@ SELECT * FROM patients
 WHERE city = (SELECT city FROM patients WHERE first_name = 'Chidi');
 ```
 
+
+
+
 ```sql
 -- Patients older than the youngest patient
 SELECT first_name, age
@@ -518,7 +521,8 @@ FROM malaria_patients m
 INNER JOIN appointments a
 ON m.patient_id = a.patient_id;
 ```
-<img width="194" height="159" alt="38" src="https://github.com/user-attachments/assets/4dac1dba-4eb7-444d-9076-e75e8fd66127" />
+
+
 
 #### Window Functions — Ranking Without Collapsing Rows
 
@@ -530,7 +534,8 @@ SELECT
     ROW_NUMBER() OVER (ORDER BY age DESC) AS row_num
 FROM patients;
 ```
-<img width="193" height="156" alt="39" src="https://github.com/user-attachments/assets/041416ad-1dc3-4dc9-bd62-872dfbb4fe35" />
+<img width="194" height="159" alt="38" src="https://github.com/user-attachments/assets/72731ecf-5c49-4bed-8169-a3763774078b" />
+
 
 ```sql
 -- RANK: handles ties — tied rows get same rank, next rank skipped
@@ -540,7 +545,7 @@ SELECT
     RANK() OVER (ORDER BY age DESC) AS rank_num
 FROM patients;
 ```
-<img width="246" height="154" alt="40" src="https://github.com/user-attachments/assets/87dcf8f1-e34b-44f0-813a-e8eec9ef914b" />
+<img width="193" height="156" alt="39" src="https://github.com/user-attachments/assets/b2bb8d27-6ffa-4132-bafc-7ac4e96909ee" />
 
 ```sql
 -- PARTITION BY: rank within groups — each city restarts from 1
@@ -551,6 +556,7 @@ SELECT
     RANK() OVER (PARTITION BY city ORDER BY age DESC) AS city_rank
 FROM patients;
 ```
+<img width="246" height="154" alt="40" src="https://github.com/user-attachments/assets/7c975c50-c519-47c6-9793-4d9a7457e6b7" />
 
 ```sql
 -- ROW_NUMBER partitioned by condition, youngest first
