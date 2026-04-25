@@ -167,16 +167,23 @@ ORDER BY age ASC;
 -- Sort alphabetically by first name
 SELECT * FROM students
 ORDER BY first_name ASC;
+```
+<img width="315" height="117" alt="11" src="https://github.com/user-attachments/assets/976219dc-5210-4483-95f5-daf8066d98c2" />
 
+```sql
 -- Sort by age descending (oldest first)
 SELECT * FROM students
 ORDER BY age DESC;
+```
+<img width="310" height="115" alt="12" src="https://github.com/user-attachments/assets/2a2635a9-2314-4aad-a44d-6f8b68c8bd2f" />
 
+```sql
 -- Combine filter and sort
 SELECT first_name, age FROM students
 WHERE age = 23 OR age = 24
 ORDER BY age ASC;
 ```
+<img width="135" height="84" alt="13" src="https://github.com/user-attachments/assets/76b74dd6-2d14-48df-ae84-61cfd33eb0f8" />
 
 #### BETWEEN & LIKE
 
@@ -184,19 +191,29 @@ ORDER BY age ASC;
 -- BETWEEN: filter a range (inclusive of both ends)
 SELECT * FROM students
 WHERE age BETWEEN 21 AND 24;
+```
+<img width="316" height="96" alt="14" src="https://github.com/user-attachments/assets/892e8a83-2f51-4846-a978-696dc58281a9" />
 
+```sql
 -- LIKE: pattern matching
 -- % means anything can go here
 SELECT * FROM students
 WHERE first_name LIKE 'D%';      -- starts with D
+```
+<img width="309" height="59" alt="15" src="https://github.com/user-attachments/assets/e728e00e-cfd3-4df6-b79a-9280da94a8c0" />
 
+```sql
 SELECT * FROM students
 WHERE last_name LIKE '%o%';      -- contains o anywhere
+```
+<img width="306" height="60" alt="16" src="https://github.com/user-attachments/assets/141c0931-e79f-4955-9f4f-38bdbce34241" />
 
+```sql
 -- Combine LIKE with OR
 SELECT first_name, age FROM students
 WHERE first_name LIKE 'A%' OR first_name LIKE '%a';
 ```
+<img width="132" height="59" alt="17" src="https://github.com/user-attachments/assets/e341f4cc-a0f9-4663-9829-c1fd2a0b83d3" />
 
 #### Aggregate Functions
 
@@ -208,7 +225,10 @@ SELECT
     MIN(age)  AS youngest,
     MAX(age)  AS oldest
 FROM students;
+```
+<img width="302" height="40" alt="18" src="https://github.com/user-attachments/assets/f8c54df5-f1a3-40ea-8850-36671b1b8b21" />
 
+```sql
 -- Aggregate with WHERE filter
 SELECT 
     COUNT(*) AS total_students,
@@ -218,6 +238,7 @@ SELECT
 FROM students
 WHERE age >= 23;
 ```
+<img width="296" height="40" alt="19" src="https://github.com/user-attachments/assets/bfe94f6e-bb10-447e-a08c-e21d9d5c8a80" />
 
 #### GROUP BY & HAVING
 
@@ -226,19 +247,26 @@ WHERE age >= 23;
 SELECT city, COUNT(*) AS total_students
 FROM students
 GROUP BY city;
+```
+<img width="162" height="98" alt="20" src="https://github.com/user-attachments/assets/594fa566-8194-4757-8fc0-6c6ce8fb5bc9" />
 
+```sql
 -- Average age per city sorted descending
 SELECT city, AVG(age) AS average_age
 FROM students
 GROUP BY city
 ORDER BY average_age DESC;
+```
+<img width="166" height="98" alt="21" src="https://github.com/user-attachments/assets/966c6e77-db78-44d9-8384-16d1d5a8e0ea" />
 
+```sql
 -- HAVING: filter groups after GROUP BY
 SELECT city, COUNT(*) AS total_students
 FROM students
 GROUP BY city
 HAVING COUNT(*) > 1;
 ```
+<img width="157" height="44" alt="22" src="https://github.com/user-attachments/assets/fe0ade94-0376-42b4-8b2a-16651c6bf3cc" />
 
 #### UPDATE & DELETE
 
