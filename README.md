@@ -439,9 +439,7 @@ WHERE age > (SELECT AVG(age) FROM patients);
 SELECT * FROM patients
 WHERE city = (SELECT city FROM patients WHERE first_name = 'Chidi');
 ```
-
-
-
+<img width="377" height="79" alt="chidi" src="https://github.com/user-attachments/assets/c1060dcf-5ebe-44a7-9b45-d43e8ad0b89d" />
 
 ```sql
 -- Patients older than the youngest patient
@@ -489,7 +487,8 @@ WITH lagos_patients AS (
 )
 SELECT * FROM lagos_patients;
 ```
-<img width="211" height="79" alt="36" src="https://github.com/user-attachments/assets/31202a50-4745-4c73-bc80-43fdf9455d37" />
+<img width="213" height="82" alt="42" src="https://github.com/user-attachments/assets/46e0c270-8c2c-4d0c-946d-e8a5a3dbf883" />
+
 
 ```sql
 -- CTE: Senior patients
@@ -500,7 +499,7 @@ WITH senior_patients AS (
 SELECT first_name, age, condition 
 FROM senior_patients;
 ```
-<img width="337" height="75" alt="37" src="https://github.com/user-attachments/assets/0c8cb72b-eb44-48eb-8f26-6642534a2109" />
+<img width="211" height="79" alt="36" src="https://github.com/user-attachments/assets/6d037475-6a4e-4775-9ec8-6078bf9da033" />
 
 ```sql
 -- CTE + JOIN + CASE WHEN combined
@@ -521,7 +520,7 @@ FROM malaria_patients m
 INNER JOIN appointments a
 ON m.patient_id = a.patient_id;
 ```
-
+<img width="337" height="75" alt="37" src="https://github.com/user-attachments/assets/18cf4d94-ea15-4470-af93-a7d0b3a16456" />
 
 
 #### Window Functions — Ranking Without Collapsing Rows
@@ -564,7 +563,7 @@ SELECT first_name, condition,
     ROW_NUMBER() OVER (PARTITION BY condition ORDER BY age ASC) AS row_num
 FROM patients;
 ```
-<img width="213" height="82" alt="42" src="https://github.com/user-attachments/assets/b29ceb9c-1de8-4731-92f2-7db1e6422c03" />
+
 
 #### Views — Saved Virtual Tables
 
@@ -579,7 +578,8 @@ WHERE city = 'Lagos';
 
 SELECT * FROM lagos_patients_view;
 ```
-<img width="335" height="74" alt="43" src="https://github.com/user-attachments/assets/b06b9038-7523-476f-9200-70ef65bdc0f3" />
+<img width="213" height="78" alt="view 1" src="https://github.com/user-attachments/assets/8f6af4ae-d098-404e-bf89-ff2c2a35eb7e" />
+
 
 ```sql
 -- View: Completed appointments with JOIN
@@ -596,7 +596,8 @@ WHERE a.status = 'Completed';
 
 SELECT * FROM completed_appointments_view;
 ```
-<img width="396" height="175" alt="44" src="https://github.com/user-attachments/assets/93a5be8f-49a0-450a-bec8-c82fd8930a57" />
+<img width="338" height="81" alt="view 2" src="https://github.com/user-attachments/assets/25b9d242-ac68-4448-a547-33992df0ced1" />
+
 
 #### Stored Procedures — Reusable Code Blocks with Parameters
 
