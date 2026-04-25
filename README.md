@@ -540,6 +540,7 @@ FROM patients;
 ```
 <img width="246" height="154" alt="40" src="https://github.com/user-attachments/assets/87dcf8f1-e34b-44f0-813a-e8eec9ef914b" />
 
+```sql
 -- PARTITION BY: rank within groups — each city restarts from 1
 SELECT 
     first_name,
@@ -547,12 +548,16 @@ SELECT
     age,
     RANK() OVER (PARTITION BY city ORDER BY age DESC) AS city_rank
 FROM patients;
+```
+<img width="234" height="155" alt="41" src="https://github.com/user-attachments/assets/3393907d-f2ee-4729-9aaa-409afb50e4b1" />
 
+```sql
 -- ROW_NUMBER partitioned by condition, youngest first
 SELECT first_name, condition,
     ROW_NUMBER() OVER (PARTITION BY condition ORDER BY age ASC) AS row_num
 FROM patients;
 ```
+<img width="213" height="82" alt="42" src="https://github.com/user-attachments/assets/b29ceb9c-1de8-4731-92f2-7db1e6422c03" />
 
 #### Views — Saved Virtual Tables
 
@@ -566,7 +571,10 @@ FROM patients
 WHERE city = 'Lagos';
 
 SELECT * FROM lagos_patients_view;
+```
+<img width="335" height="74" alt="43" src="https://github.com/user-attachments/assets/b06b9038-7523-476f-9200-70ef65bdc0f3" />
 
+```sql
 -- View: Completed appointments with JOIN
 CREATE VIEW completed_appointments_view AS
 SELECT 
@@ -581,6 +589,7 @@ WHERE a.status = 'Completed';
 
 SELECT * FROM completed_appointments_view;
 ```
+<img width="396" height="175" alt="44" src="https://github.com/user-attachments/assets/93a5be8f-49a0-450a-bec8-c82fd8930a57" />
 
 #### Stored Procedures — Reusable Code Blocks with Parameters
 
@@ -598,7 +607,10 @@ END;
 
 EXEC GetPatientsByCity 'Lagos';
 EXEC GetPatientsByCity 'Abuja';
+```
+<img width="375" height="185" alt="45" src="https://github.com/user-attachments/assets/7cba9311-6d13-4b4e-9047-7ce43a09f3bc" />
 
+```sql
 -- Procedure: Get patients by condition
 CREATE PROCEDURE GetPatientsByCondition
     @condition VARCHAR(50)
@@ -610,7 +622,10 @@ END;
 
 EXEC GetPatientsByCondition 'Malaria';
 EXEC GetPatientsByCondition 'Diabetes';
+```
+<img width="281" height="172" alt="46" src="https://github.com/user-attachments/assets/9390e890-78f1-42ce-a165-e901f2801031" />
 
+```sql
 -- Procedure: Get appointments by status
 CREATE PROCEDURE GetAppointmentsByStatus
     @status VARCHAR(50)
@@ -630,6 +645,7 @@ END;
 EXEC GetAppointmentsByStatus 'Completed';
 EXEC GetAppointmentsByStatus 'Cancelled';
 ```
+<img width="451" height="153" alt="47" src="https://github.com/user-attachments/assets/8ace9046-9480-47a5-bf98-59cd78ba4c41" />
 
 ---
 
@@ -644,17 +660,24 @@ EXEC GetAppointmentsByStatus 'Cancelled';
 SELECT *,
     RANK() OVER (ORDER BY age DESC) AS rank_num
 FROM patients;
+```
+<img width="297" height="155" alt="48" src="https://github.com/user-attachments/assets/526c66e2-be4a-4efd-b12c-d7b15ce2ffda" />
 
+```sql
 -- Rank within each condition group youngest first
 SELECT first_name, age, condition,
     RANK() OVER (PARTITION BY condition ORDER BY age ASC) AS condition_rank
 FROM patients;
+```
+<img width="275" height="136" alt="49" src="https://github.com/user-attachments/assets/b2e46306-0992-43b2-9098-fdeca5166880" />
 
+```sql
 -- Row numbers for appointments by date
 SELECT doctor_name, appointment_date,
     ROW_NUMBER() OVER (ORDER BY appointment_date ASC) AS row_num
 FROM appointments;
 ```
+<img width="257" height="82" alt="50" src="https://github.com/user-attachments/assets/dbbb4cb9-54fd-4a3c-b1a4-609bf4b6b81f" />
 
 ### Phase 2: Views
 
@@ -686,7 +709,10 @@ WITH young_patients AS (
 SELECT first_name, last_name, age,
     ROW_NUMBER() OVER (ORDER BY age DESC) AS age_rank
 FROM young_patients;
+```
+![Uploading 51.PNG…]()
 
+```sql
 -- Patients with more than 1 appointment
 WITH appointment_summary AS (
     SELECT patient_id, COUNT(*) AS total_appointments
@@ -697,6 +723,7 @@ SELECT patient_id, total_appointments
 FROM appointment_summary
 WHERE total_appointments > 1;
 ```
+
 
 ### Phase 4: Full Analysis Queries
 
@@ -737,6 +764,7 @@ SELECT
 FROM appointments
 GROUP BY doctor_name;
 ```
+
 
 ---
 
