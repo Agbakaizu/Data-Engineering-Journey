@@ -275,17 +275,24 @@ HAVING COUNT(*) > 1;
 UPDATE students
 SET city = 'Port Harcourt'
 WHERE student_id = 2;
+```
+<img width="345" height="117" alt="23" src="https://github.com/user-attachments/assets/3dfedef3-fb2c-4c01-aebd-347179b461c3" />
 
+```sql
 -- Update a student's age
 UPDATE students
 SET age = 25
 WHERE student_id = 3;
+```
+<img width="342" height="114" alt="24" src="https://github.com/user-attachments/assets/d7b3b5a8-2e00-4bbb-87d3-720ec2b97fe5" />
 
+```sql
 -- Delete a specific student
 -- ALWAYS use WHERE with DELETE to avoid deleting everything
 DELETE FROM students
 WHERE first_name = 'Alex';
 ```
+<img width="311" height="98" alt="25" src="https://github.com/user-attachments/assets/b7436993-d148-4ded-9a11-0fca9d78aabb" />
 
 ---
 
@@ -355,7 +362,10 @@ SELECT
 FROM patients p
 INNER JOIN appointments a
 ON p.patient_id = a.patient_id;
+```
+<img width="422" height="115" alt="26" src="https://github.com/user-attachments/assets/bb8d3502-4350-419c-8638-89c40c378212" />
 
+```sql
 -- LEFT JOIN: ALL rows from left table + matches from right
 -- Patients with no appointments show NULL
 SELECT 
@@ -366,7 +376,10 @@ SELECT
 FROM patients p
 LEFT JOIN appointments a
 ON p.patient_id = a.patient_id;
+```
+<img width="322" height="173" alt="27" src="https://github.com/user-attachments/assets/0b56d73a-57ce-43fa-a562-fefa41800850" />
 
+```sql
 -- RIGHT JOIN: ALL rows from right table + matches from left
 -- Appointments with no matching patient show NULL
 SELECT 
@@ -378,7 +391,10 @@ SELECT
 FROM patients p
 RIGHT JOIN appointments a
 ON p.patient_id = a.patient_id;
+```
+<img width="322" height="173" alt="28" src="https://github.com/user-attachments/assets/f4cb8d5c-225c-4ea3-a3e6-929f821ae303" />
 
+```sql
 -- INNER JOIN + WHERE: Completed appointments only
 SELECT
     p.first_name,
@@ -389,7 +405,10 @@ FROM patients p
 INNER JOIN appointments a
 ON p.patient_id = a.patient_id
 WHERE a.status = 'Completed';
+```
+<img width="300" height="77" alt="29" src="https://github.com/user-attachments/assets/c141dd15-7430-4b6c-bb32-29e08a26d675" />
 
+```sql
 -- INNER JOIN + WHERE: Malaria patients only
 SELECT
     p.first_name,
@@ -400,6 +419,7 @@ INNER JOIN appointments a
 ON p.patient_id = a.patient_id
 WHERE p.condition = 'Malaria';
 ```
+<img width="130" height="75" alt="30" src="https://github.com/user-attachments/assets/114a1340-b9c0-4fe4-ad15-3ac38640dc93" />
 
 #### Subqueries — Queries Inside Queries
 
@@ -409,16 +429,23 @@ WHERE p.condition = 'Malaria';
 SELECT first_name, age
 FROM patients
 WHERE age > (SELECT AVG(age) FROM patients);
+```
+<img width="384" height="77" alt="31" src="https://github.com/user-attachments/assets/6657bee1-2073-45fd-bfb1-2ce507f5e7fb" />
 
+```sql
 -- Patients from same city as Chidi
 SELECT * FROM patients
 WHERE city = (SELECT city FROM patients WHERE first_name = 'Chidi');
+```
+<img width="132" height="136" alt="32" src="https://github.com/user-attachments/assets/f830f34c-03a0-4dc1-856d-1823f92ef964" />
 
+```sql
 -- Patients older than the youngest patient
 SELECT first_name, age
 FROM patients
 WHERE age > (SELECT MIN(age) FROM patients);
 ```
+<img width="207" height="152" alt="33" src="https://github.com/user-attachments/assets/57e6a119-c4cf-495e-97c0-a8b8f8879fbd" />
 
 #### CASE WHEN — Conditional Logic
 
@@ -431,7 +458,10 @@ SELECT first_name, age,
         ELSE 'Senior'
     END AS age_group
 FROM patients;
+```
+<img width="249" height="153" alt="34" src="https://github.com/user-attachments/assets/3a65998b-e26f-405e-8c01-3307823cadea" />
 
+```sql
 -- Condition priority level
 SELECT first_name, condition,
     CASE 
@@ -442,6 +472,7 @@ SELECT first_name, condition,
     END AS priority_level
 FROM patients;
 ```
+<img width="379" height="78" alt="35" src="https://github.com/user-attachments/assets/15303ea9-ac59-4fd6-b990-d8425be93a5b" />
 
 #### CTEs — Common Table Expressions
 
@@ -452,7 +483,10 @@ WITH lagos_patients AS (
     WHERE city = 'Lagos'
 )
 SELECT * FROM lagos_patients;
+```
+<img width="211" height="79" alt="36" src="https://github.com/user-attachments/assets/31202a50-4745-4c73-bc80-43fdf9455d37" />
 
+```sql
 -- CTE: Senior patients
 WITH senior_patients AS (
     SELECT * FROM patients
@@ -460,7 +494,10 @@ WITH senior_patients AS (
 )
 SELECT first_name, age, condition 
 FROM senior_patients;
+```
+<img width="337" height="75" alt="37" src="https://github.com/user-attachments/assets/0c8cb72b-eb44-48eb-8f26-6642534a2109" />
 
+```sql
 -- CTE + JOIN + CASE WHEN combined
 WITH malaria_patients AS (
     SELECT * FROM patients
@@ -479,6 +516,7 @@ FROM malaria_patients m
 INNER JOIN appointments a
 ON m.patient_id = a.patient_id;
 ```
+<img width="194" height="159" alt="38" src="https://github.com/user-attachments/assets/4dac1dba-4eb7-444d-9076-e75e8fd66127" />
 
 #### Window Functions — Ranking Without Collapsing Rows
 
@@ -489,13 +527,18 @@ SELECT
     age,
     ROW_NUMBER() OVER (ORDER BY age DESC) AS row_num
 FROM patients;
+```
+<img width="193" height="156" alt="39" src="https://github.com/user-attachments/assets/041416ad-1dc3-4dc9-bd62-872dfbb4fe35" />
 
+```sql
 -- RANK: handles ties — tied rows get same rank, next rank skipped
 SELECT 
     first_name,
     age,
     RANK() OVER (ORDER BY age DESC) AS rank_num
 FROM patients;
+```
+<img width="246" height="154" alt="40" src="https://github.com/user-attachments/assets/87dcf8f1-e34b-44f0-813a-e8eec9ef914b" />
 
 -- PARTITION BY: rank within groups — each city restarts from 1
 SELECT 
