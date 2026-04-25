@@ -661,7 +661,8 @@ SELECT *,
     RANK() OVER (ORDER BY age DESC) AS rank_num
 FROM patients;
 ```
-<img width="297" height="155" alt="48" src="https://github.com/user-attachments/assets/526c66e2-be4a-4efd-b12c-d7b15ce2ffda" />
+<img width="451" height="153" alt="47" src="https://github.com/user-attachments/assets/4db43229-79da-47ff-a51b-2ab3b3437111" />
+
 
 ```sql
 -- Rank within each condition group youngest first
@@ -669,7 +670,7 @@ SELECT first_name, age, condition,
     RANK() OVER (PARTITION BY condition ORDER BY age ASC) AS condition_rank
 FROM patients;
 ```
-<img width="275" height="136" alt="49" src="https://github.com/user-attachments/assets/b2e46306-0992-43b2-9098-fdeca5166880" />
+<img width="297" height="155" alt="48" src="https://github.com/user-attachments/assets/18d42796-592d-475e-8d40-161ef721297d" />
 
 ```sql
 -- Row numbers for appointments by date
