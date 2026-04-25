@@ -724,7 +724,8 @@ SELECT patient_id, total_appointments
 FROM appointment_summary
 WHERE total_appointments > 1;
 ```
-<img width="388" height="114" alt="52" src="https://github.com/user-attachments/assets/58239704-2d86-4284-948c-4a253af58102" />
+<img width="206" height="41" alt="51" src="https://github.com/user-attachments/assets/475473d7-2b81-49f6-aeb5-ecca254e74ef" />
+
 
 
 ### Phase 4: Full Analysis Queries
@@ -753,7 +754,7 @@ ORDER BY
         ELSE 4
     END ASC;
 ```
-<img width="386" height="58" alt="53" src="https://github.com/user-attachments/assets/d88b0506-5d5e-4404-a84d-99ec8675abb2" />
+<img width="388" height="114" alt="52" src="https://github.com/user-attachments/assets/6daa4d70-511e-4d04-a8e7-999693d155e1" />
 
 ```sql
 -- Subquery: Patients older than average Lagos patient age
