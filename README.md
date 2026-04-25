@@ -710,7 +710,8 @@ SELECT first_name, last_name, age,
     ROW_NUMBER() OVER (ORDER BY age DESC) AS age_rank
 FROM young_patients;
 ```
-![Uploading 51.PNG…]()
+<img width="206" height="41" alt="51" src="https://github.com/user-attachments/assets/889c3b93-fcef-42fb-9c5b-921849eed7e1" />
+
 
 ```sql
 -- Patients with more than 1 appointment
@@ -723,6 +724,7 @@ SELECT patient_id, total_appointments
 FROM appointment_summary
 WHERE total_appointments > 1;
 ```
+<img width="388" height="114" alt="52" src="https://github.com/user-attachments/assets/58239704-2d86-4284-948c-4a253af58102" />
 
 
 ### Phase 4: Full Analysis Queries
@@ -750,7 +752,10 @@ ORDER BY
         WHEN p.condition = 'Malaria'      THEN 3
         ELSE 4
     END ASC;
+```
+<img width="386" height="58" alt="53" src="https://github.com/user-attachments/assets/d88b0506-5d5e-4404-a84d-99ec8675abb2" />
 
+```sql
 -- Subquery: Patients older than average Lagos patient age
 SELECT * FROM patients
 WHERE age > (SELECT AVG(age) FROM patients WHERE city = 'Lagos');
@@ -764,7 +769,7 @@ SELECT
 FROM appointments
 GROUP BY doctor_name;
 ```
-
+<img width="317" height="79" alt="54" src="https://github.com/user-attachments/assets/97588948-ea69-4c3b-83c8-0c6e9b4ed565" />
 
 ---
 
