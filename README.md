@@ -549,7 +549,6 @@ SELECT
     RANK() OVER (PARTITION BY city ORDER BY age DESC) AS city_rank
 FROM patients;
 ```
-<img width="234" height="155" alt="41" src="https://github.com/user-attachments/assets/3393907d-f2ee-4729-9aaa-409afb50e4b1" />
 
 ```sql
 -- ROW_NUMBER partitioned by condition, youngest first
@@ -678,7 +677,7 @@ SELECT doctor_name, appointment_date,
     ROW_NUMBER() OVER (ORDER BY appointment_date ASC) AS row_num
 FROM appointments;
 ```
-<img width="257" height="82" alt="50" src="https://github.com/user-attachments/assets/dbbb4cb9-54fd-4a3c-b1a4-609bf4b6b81f" />
+<img width="234" height="155" alt="41" src="https://github.com/user-attachments/assets/db0c9208-5ec5-4caa-9763-ceb682c9ba46" />
 
 ### Phase 2: Views
 
