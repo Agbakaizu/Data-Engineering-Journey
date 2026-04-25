@@ -693,11 +693,12 @@ SELECT
 FROM patients p
 INNER JOIN appointments a
 ON p.patient_id = a.patient_id
-WHERE p.age > 50 AND p.condition = 'Diabetes';
+WHERE p.age > 40 AND p.condition = 'Diabetes';
 
 SELECT * FROM senior_diabetic_view
 ORDER BY age DESC;
 ```
+<img width="214" height="37" alt="1-1" src="https://github.com/user-attachments/assets/64cd3e0d-0d14-48c2-b57b-d829bc5e17e8" />
 
 ### Phase 3: CTEs + Window Functions Combined
 
