@@ -419,7 +419,8 @@ INNER JOIN appointments a
 ON p.patient_id = a.patient_id
 WHERE p.condition = 'Malaria';
 ```
-<img width="130" height="75" alt="30" src="https://github.com/user-attachments/assets/114a1340-b9c0-4fe4-ad15-3ac38640dc93" />
+<img width="236" height="73" alt="1-2" src="https://github.com/user-attachments/assets/7e23a9a6-0d7d-44ec-b70e-f1ebf094e0df" />
+
 
 #### Subqueries — Queries Inside Queries
 
