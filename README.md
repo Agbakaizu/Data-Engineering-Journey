@@ -392,7 +392,7 @@ FROM patients p
 RIGHT JOIN appointments a
 ON p.patient_id = a.patient_id;
 ```
-<img width="322" height="173" alt="28" src="https://github.com/user-attachments/assets/f4cb8d5c-225c-4ea3-a3e6-929f821ae303" />
+<img width="427" height="134" alt="1-3" src="https://github.com/user-attachments/assets/933f3a8f-d715-4f95-ad1a-cca48e268684" />
 
 ```sql
 -- INNER JOIN + WHERE: Completed appointments only
