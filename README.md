@@ -1071,10 +1071,9 @@ df_rows = pd.read_csv("patients.csv", nrows=3)
 ---
 ## Stage 3: DataCamp (Data Engineer in Python) Capstone Project 1
 
-```
-# Cleaning Bank Marketing Campaign Data
+### Cleaning Bank Marketing Campaign Data
 
-## Project Instructions
+#### Project Instructions
 
 Subset, clean, and reformat the `bank_marketing.csv` dataset to create 
 and store three new files based on the requirements detailed below.
@@ -1084,8 +1083,6 @@ and store three new files based on the requirements detailed below.
   below and formatted to the data types listed.
 - Save the three DataFrames to csv files, without an index, as `client.csv`, 
   `campaign.csv`, and `economics.csv` respectively.
-
----
 
 ## Dataset Schema
 
@@ -1120,12 +1117,6 @@ and store three new files based on the requirements detailed below.
 | `client_id`           | integer   | Client ID                    | N/A                   |
 | `cons_price_idx`      | float     | Consumer price index         | N/A                   |
 | `euribor_three_months`| float     | Euribor three-month rate     | N/A                   |
-```
-
----
-
-This is your `README.md` instructions section — want me to now write the full README combining this with a brief project description, your solution, and a "tools used" section so it's completely portfolio-ready?
-
 
 ---
 
