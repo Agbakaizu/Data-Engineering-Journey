@@ -18,7 +18,7 @@
 
 ## 📖 Project Overview
 
-This repository documents my complete data engineering learning journey from absolute zero — no prior technical background — to writing advanced SQL queries, Python scripts and Pandas pipelines independently.
+This repository documents my complete data engineering learning journey from absolute zero, no prior technical background to writing advanced SQL queries, Python scripts and Pandas pipelines independently.
 
 Every line of code here was written by me after learning each concept from scratch. The journey covers SQL fundamentals, Python programming, Pandas data manipulation and version control with Git and GitHub.
 
