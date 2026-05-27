@@ -1069,30 +1069,63 @@ df_rows = pd.read_csv("patients.csv", nrows=3)
 | Load data | SELECT * FROM | pd.read_csv() |
 
 ---
+## Stage 3: DataCamp (Data Engineer in Python) Capstone Project 1
 
-## 🗺️ Learning Timeline
+```
+# Cleaning Bank Marketing Campaign Data
 
-| Week | Focus |
-|---|---|
-| Week 1 | SQL Basics — SELECT, WHERE, ORDER BY, GROUP BY |
-| Week 2 | Advanced SQL — JOINs, Subqueries, CASE WHEN, CTEs |
-| Week 3 | SQL Mastery — Window Functions, Views, Stored Procedures |
-| Week 4 | Hospital Capstone Project |
-| Week 5 | Python Fundamentals — Variables, Lists, Dictionaries, Loops, Functions |
-| Week 6 | Pandas + Intermediate Python — Lambda, *args, File Handling |
-| Week 7 | Git, GitHub, Portfolio Setup |
-| Ongoing | DataCamp Scholarship — Data Engineering Track |
+## Project Instructions
+
+Subset, clean, and reformat the `bank_marketing.csv` dataset to create 
+and store three new files based on the requirements detailed below.
+
+- Split and tidy `bank_marketing.csv`, storing as three DataFrames called 
+  `client`, `campaign`, and `economics`, each containing the columns outlined 
+  below and formatted to the data types listed.
+- Save the three DataFrames to csv files, without an index, as `client.csv`, 
+  `campaign.csv`, and `economics.csv` respectively.
 
 ---
 
-## 🚀 Next Steps
+## Dataset Schema
 
-- [ ] Push Python Jupyter notebooks to GitHub
-- [ ] Learn cloud basics — Azure or AWS
-- [ ] Learn dbt — data transformation tool
-- [ ] Learn Apache Airflow — pipeline scheduling
-- [ ] Build end-to-end data pipeline project
-- [ ] Apply for data engineering internships and roles
+### `client.csv`
+
+| Column           | Data Type | Description                              | Cleaning Requirements                              |
+|------------------|-----------|------------------------------------------|----------------------------------------------------|
+| `client_id`      | integer   | Client ID                                | N/A                                                |
+| `age`            | integer   | Client's age in years                    | N/A                                                |
+| `job`            | object    | Client's type of job                     | Change `"."` to `"_"`                              |
+| `marital`        | object    | Client's marital status                  | N/A                                                |
+| `education`      | object    | Client's level of education              | Change `"."` to `"_"` and `"unknown"` to `np.NaN` |
+| `credit_default` | bool      | Whether the client's credit is in default| Convert to boolean: `1` if `"yes"`, otherwise `0` |
+| `mortgage`       | bool      | Whether the client has a mortgage        | Convert to boolean: `1` if `"yes"`, otherwise `0` |
+
+### `campaign.csv`
+
+| Column                       | Data Type | Description                                          | Cleaning Requirements                                  |
+|------------------------------|-----------|------------------------------------------------------|--------------------------------------------------------|
+| `client_id`                  | integer   | Client ID                                            | N/A                                                    |
+| `number_contacts`            | integer   | Number of contact attempts in the current campaign   | N/A                                                    |
+| `contact_duration`           | integer   | Last contact duration in seconds                     | N/A                                                    |
+| `previous_campaign_contacts` | integer   | Number of contact attempts in the previous campaign  | N/A                                                    |
+| `previous_outcome`           | bool      | Outcome of the previous campaign                     | Convert to boolean: `1` if `"success"`, otherwise `0` |
+| `campaign_outcome`           | bool      | Outcome of the current campaign                      | Convert to boolean: `1` if `"yes"`, otherwise `0`     |
+| `last_contact_date`          | datetime  | Last date the client was contacted                   | Create from `day`, `month`, and `year` (`2022`) in `YYYY-MM-DD` format |
+
+### `economics.csv`
+
+| Column                | Data Type | Description                  | Cleaning Requirements |
+|-----------------------|-----------|------------------------------|-----------------------|
+| `client_id`           | integer   | Client ID                    | N/A                   |
+| `cons_price_idx`      | float     | Consumer price index         | N/A                   |
+| `euribor_three_months`| float     | Euribor three-month rate     | N/A                   |
+```
+
+---
+
+This is your `README.md` instructions section — want me to now write the full README combining this with a brief project description, your solution, and a "tools used" section so it's completely portfolio-ready?
+
 
 ---
 
