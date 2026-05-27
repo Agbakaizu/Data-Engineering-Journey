@@ -7,12 +7,12 @@
 - [Project Overview](#project-overview)
 - [Goals](#goals)
 - [Tools Used](#tools-used)
-- [Stage 1: SQL Fundamentals](#stage-1-sql-fundamentals)
+- [Stage 1: SQL Fundamentals](##stage-1-sql-fundamentals)
   - [Database 1: Students Database](#database-1-students-database)
   - [Database 2: Hospital Database](#database-2-hospital-database)
-- [Stage 2: Python Fundamentals](#stage-2-python-fundamentals)
+- [Stage 2: Python Fundamentals](##stage-2-python-fundamentals)
 - [Key Concepts Learned](#key-concepts-learned)
-- [Stage 3: DataCamp (Data Engineering in Python) Capstone Project 1](#Stage-3-DataCamp-(Data-Engineering-in-Python)-Capstone-Project-1)
+- [Stage 3: DataCamp (Data Engineering in Python) Capstone Project 1](##Stage-3-DataCamp-(Data-Engineering-in-Python)-Capstone-Project-1)
 
 ---
 
