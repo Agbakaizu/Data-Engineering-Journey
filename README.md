@@ -1069,7 +1069,7 @@ df_rows = pd.read_csv("patients.csv", nrows=3)
 | Load data | SELECT * FROM | pd.read_csv() |
 
 ---
-## Stage 3: DataCamp (Data Engineer in Python) Capstone Project 1
+## Stage 3: DataCamp (Data Engineering in Python) Capstone Project 1
 
 ### Cleaning Bank Marketing Campaign Data
 
@@ -1117,6 +1117,111 @@ and store three new files based on the requirements detailed below.
 | `client_id`           | integer   | Client ID                    | N/A                   |
 | `cons_price_idx`      | float     | Consumer price index         | N/A                   |
 | `euribor_three_months`| float     | Euribor three-month rate     | N/A                   |
+
+---
+Here's the full project written out:
+
+---
+
+## Cleaning Bank Marketing Campaign Data
+**DataCamp Project | Python | Pandas**
+
+---
+
+### Project Brief
+
+Subset, clean, and reformat the `bank_marketing.csv` dataset to create and store three new files based on the following requirements:
+
+- Split and tidy `bank_marketing.csv`, storing as three DataFrames called `client`, `campaign`, and `economics`, each containing the columns outlined below and formatted to the specified data types.
+- Save the three DataFrames to csv files, without an index, as `client.csv`, `campaign.csv`, and `economics.csv` respectively.
+
+---
+
+### Dataset Schema
+
+**client.csv**
+
+| Column | Data Type | Description | Cleaning Requirements |
+|---|---|---|---|
+| client_id | integer | Client ID | N/A |
+| age | integer | Client's age in years | N/A |
+| job | object | Client's type of job | Change "." to "_" |
+| marital | object | Client's marital status | N/A |
+| education | object | Client's level of education | Change "." to "_" and "unknown" to np.NaN |
+| credit_default | bool | Whether the client's credit is in default | Convert to boolean: 1 if "yes", otherwise 0 |
+| mortgage | bool | Whether the client has an existing mortgage | Convert to boolean: 1 if "yes", otherwise 0 |
+
+**campaign.csv**
+
+| Column | Data Type | Description | Cleaning Requirements |
+|---|---|---|---|
+| client_id | integer | Client ID | N/A |
+| number_contacts | integer | Number of contact attempts in current campaign | N/A |
+| contact_duration | integer | Last contact duration in seconds | N/A |
+| previous_campaign_contacts | integer | Number of contact attempts in previous campaign | N/A |
+| previous_outcome | bool | Outcome of the previous campaign | Convert to boolean: 1 if "success", otherwise 0 |
+| campaign_outcome | bool | Outcome of the current campaign | Convert to boolean: 1 if "yes", otherwise 0 |
+| last_contact_date | datetime | Last date the client was contacted | Create from day, month, and year (2022) in YYYY-MM-DD format |
+
+**economics.csv**
+
+| Column | Data Type | Description | Cleaning Requirements |
+|---|---|---|---|
+| client_id | integer | Client ID | N/A |
+| cons_price_idx | float | Consumer price index | N/A |
+| euribor_three_months | float | Euribor three-month rate | N/A |
+
+---
+
+### Solution
+
+```python
+import pandas as pd
+import numpy as np
+
+# Load the initial data
+df = pd.read_csv("bank_marketing.csv")
+
+# CREATE CLIENT DATAFRAME 
+client_cols = ["client_id", "age", "job", "marital", "education", "credit_default", "mortgage"]
+client = df[client_cols].copy()
+client["job"] = client["job"].str.replace(".", "_", regex=False)
+client["education"] = client["education"].str.replace(".", "_", regex=False)
+client["education"] = client["education"].replace("unknown", np.nan)
+client["credit_default"] = client["credit_default"].apply(lambda x: 1 if x == "yes" else 0).astype(bool)
+client["mortgage"] = client["mortgage"].apply(lambda x: 1 if x == "yes" else 0).astype(bool)
+
+# CREATE CAMPAIGN DATAFRAME
+campaign_cols = ["client_id", "number_contacts", "contact_duration",
+                 "previous_campaign_contacts", "previous_outcome", "campaign_outcome",
+                 "day", "month"]
+campaign = df[campaign_cols].copy()
+campaign["previous_outcome"] = campaign["previous_outcome"].apply(lambda x: 1 if x == "success" else 0).astype(bool)
+campaign["campaign_outcome"] = campaign["campaign_outcome"].apply(lambda x: 1 if x == "yes" else 0).astype(bool)
+month_map = {
+    'jan': '01', 'feb': '02', 'mar': '03', 'apr': '04', 'may': '05', 'jun': '06',
+    'jul': '07', 'aug': '08', 'sep': '09', 'oct': '10', 'nov': '11', 'dec': '12'
+}
+
+campaign['month_num'] = campaign['month'].str.lower().map(month_map)
+campaign['year'] = '2022'
+
+campaign['last_contact_date'] = pd.to_datetime(
+    campaign['year'] + '-' + campaign['month_num'] + '-' + campaign['day'].astype(str)
+)
+campaign = campaign.drop(columns=['day', 'month', 'month_num', 'year'])
+
+# CREATE ECONOMICS DATAFRAME
+economics_cols = ["client_id", "cons_price_idx", "euribor_three_months"]
+economics = df[economics_cols].copy()
+
+# SAVE TO CSV
+client.to_csv("client.csv", index=False)
+campaign.to_csv("campaign.csv", index=False)
+economics.to_csv("economics.csv", index=False)
+
+print("Files saved successfully.")
+```
 
 ---
 
