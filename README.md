@@ -12,8 +12,7 @@
   - [Database 2: Hospital Database](#database-2-hospital-database)
 - [Stage 2: Python Fundamentals](#stage-2-python-fundamentals)
 - [Key Concepts Learned](#key-concepts-learned)
-- [Capstone Project](#capstone-project)
-- [Next Steps](#next-steps)
+- [Stage 3: DataCamp (Data Engineering in Python) Capstone Project 1](#Stage-3-DataCamp-(Data-Engineering-in-Python)-Capstone-Project-1)
 
 ---
 
@@ -36,7 +35,6 @@ Every line of code here was written by me after learning each concept from scrat
 ---
 
 ## 🛠️ Tools Used
-
 | Tool | Purpose |
 |---|---|
 | **SQL Server** | Database engine for all SQL work |
