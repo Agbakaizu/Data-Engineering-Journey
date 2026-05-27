@@ -1098,7 +1098,7 @@ df_rows = pd.read_csv("patients.csv", nrows=3)
 
 ## 💬 About Me
 
-I started this journey after receiving a rejection email for an internship. Instead of giving up, I decided to build the skills from zero — no shortcuts, no prior technical background, just consistency and hard work.
+I started this journey after receiving a rejection email for an internship. Instead of giving up, I decided to build the skills from zero, no shortcuts, no prior technical background, just consistency and hard work.
 
 This repository is proof of that journey.
 
