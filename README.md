@@ -14,7 +14,7 @@
 - [Key Concepts Learned](#key-concepts-learned)
 - [Stage 3: DataCamp (Data Engineering in Python) Projects](#stage-3-datacamp-data-engineering-in-python-projects)
   - [Project 1: Cleaning Bank Marketing Campaign Data](#Project-1-Cleaning-Bank-Marketing-Campaign-Data)
-  - [Project 2: Fitness Digital Demand — Market Analysis](#Project-2-Fitness-Digital-Demand-Market-Analysis)
+  - [Project 2: Fitness Digital Demand - Market Analysis](#Project-2-Fitness-Digital-Demand-Market-Analysis)
 ---
 
 ## 📖 Project Overview
