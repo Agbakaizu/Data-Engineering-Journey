@@ -13,6 +13,8 @@
 - [Stage 2: Python Fundamentals](#stage-2-python-fundamentals)
 - [Key Concepts Learned](#key-concepts-learned)
 - [Stage 3: DataCamp (Data Engineering in Python) Projects](#stage-3-datacamp-data-engineering-in-python-projects)
+  - [Project 1: Cleaning Bank Marketing Campaign Data](#Project-1-Cleaning-Bank-Marketing-Campaign-Data)
+  - [Project 2: Fitness Digital Demand — Market Analysis](#Project-2-Fitness-Digital-Demand-Market-Analysis)
 ---
 
 ## 📖 Project Overview
@@ -1234,7 +1236,7 @@ print(df_keywords_geo.loc["Philippines", :])
 print(df_keywords_geo.loc["Malaysia", :])
 
 home_workout_geo = "Philippines"
-
+```
 <img width="1963" height="1101" alt="datacamp 1" src="https://github.com/user-attachments/assets/6f378ec3-5713-43dc-901d-a430dd0bbcf2" />
 <img width="1954" height="1101" alt="dc 2" src="https://github.com/user-attachments/assets/76b0206f-e58e-401f-bbc6-c84ecb982dfd" />
 ```
