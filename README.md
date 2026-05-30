@@ -1165,6 +1165,88 @@ economics.to_csv("economics.csv", index=False)
 print("Files saved successfully.")
 ```
 
+# Project 2: Fitness Digital Demand — Market Analysis
+---
+
+## Project Instructions
+
+As a product manager for a fitness studio, this analysis explores the current demand for digital fitness classes using Google Trends data. The goal is to gauge demand and identify potential areas for growth of digital products and services.
+
+- Help the fitness studio explore interest in workouts at a global and national level.
+
+- When was the global search for 'workout' at its peak? Save the year of peak interest as a string named year_str in the format "yyyy".
+
+- Of the keywords available, what was the most popular during the covid pandemic, and what is the most popular now? Save your answers as variables called peak_covid and current respectively.
+
+- What country has the highest interest for workouts among the following: United States, Australia, or Japan? Save your answer as top_country.
+
+- You'd be interested in expanding your virtual home workouts offering to either the Philippines or Malaysia. Which of the two countries has the highest interest in home workouts? Identify the country and save it as home_workout_geo.
+
+---
+
+| File | Description |
+|---|---|
+| `workout.csv` | Monthly global popularity of 'workout' keyword |
+| `three_keywords.csv` | Monthly global popularity of 'home workout', 'gym workout', 'home gym' |
+| `workout_geo.csv` | Country-level popularity of 'workout' over 5 years |
+| `three_keywords_geo.csv` | Country-level popularity of all 3 keywords over 5 years |
+
+---
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+# Find the peak for global 'workout' searches
+df_workout = pd.read_csv("data/workout.csv")
+
+plt.figure(figsize=(12, 6))
+plt.plot(df_workout["month"], df_workout["workout_worldwide"])
+plt.xticks(rotation=90)
+plt.show()
+
+year_str = "2020"
+
+# Find the most popular keywords for the current year and during covid
+df_keywords = pd.read_csv("data/three_keywords.csv")
+
+plt.figure(figsize=(12, 6))
+plt.plot(df_keywords["month"], df_keywords["home_workout_worldwide"], label="Home workout")
+plt.plot(df_keywords["month"], df_keywords["gym_workout_worldwide"], label="Gym workout")
+plt.plot(df_keywords["month"], df_keywords["home_gym_worldwide"], label="Home gym")
+plt.xticks(rotation=90)
+plt.legend()
+plt.show()
+
+peak_covid = "home workout"
+current = "gym workout"
+
+# Find the country with the highest interest for workouts
+df_workout_geo = pd.read_csv("data/workout_geo.csv", index_col = 0)
+print(df_workout_geo.loc["United States"])
+print(df_workout_geo.loc["Australia"])
+print(df_workout_geo.loc["Japan"])
+
+top_country = "United States"
+
+# Who has the highest interest in home workouts, Philippines or Malaysia?
+df_keywords_geo = pd.read_csv("data/three_keywords_geo.csv", index_col = 0)
+print(df_keywords_geo.loc["Philippines", :])
+print(df_keywords_geo.loc["Malaysia", :])
+
+home_workout_geo = "Philippines"
+<img width="1963" height="1101" alt="datacamp 1" src="https://github.com/user-attachments/assets/6f378ec3-5713-43dc-901d-a430dd0bbcf2" />
+<img width="1954" height="1101" alt="dc 2" src="https://github.com/user-attachments/assets/76b0206f-e58e-401f-bbc6-c84ecb982dfd" />
+
+## 📊 Summary of Findings
+
+| Question | Finding |
+|---|---|
+| Peak year for workout searches | **2020** — COVID lockdowns |
+| Most searched keyword during COVID | **Home workout** |
+| Most searched keyword currently | **Gym workout** |
+| Top country for workout interest | **United States** |
+| Top SE Asian country for home workout | **Philippines** |
+
 ---
 
 ## 💬 About Me
