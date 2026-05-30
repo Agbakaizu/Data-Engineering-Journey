@@ -1239,7 +1239,7 @@ home_workout_geo = "Philippines"
 ```
 <img width="1963" height="1101" alt="datacamp 1" src="https://github.com/user-attachments/assets/6f378ec3-5713-43dc-901d-a430dd0bbcf2" />
 <img width="1954" height="1101" alt="dc 2" src="https://github.com/user-attachments/assets/76b0206f-e58e-401f-bbc6-c84ecb982dfd" />
-```
+
 
 ## 📊 Summary of Findings
 
