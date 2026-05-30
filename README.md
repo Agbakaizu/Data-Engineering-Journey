@@ -12,7 +12,7 @@
   - [Database 2: Hospital Database](#database-2-hospital-database)
 - [Stage 2: Python Fundamentals](#stage-2-python-fundamentals)
 - [Key Concepts Learned](#key-concepts-learned)
-- [Stage 3: DataCamp (Data Engineering in Python) Capstone Project 1](#stage-3-datacamp-data-engineering-in-python-capstone-project-1)
+- [Stage 3: DataCamp (Data Engineering in Python) Projects](#stage-3-datacamp-data-engineering-in-python-projects)
 ---
 
 ## 📖 Project Overview
@@ -1066,9 +1066,9 @@ df_rows = pd.read_csv("patients.csv", nrows=3)
 | Load data | SELECT * FROM | pd.read_csv() |
 
 ---
-## Stage 3: DataCamp (Data Engineering in Python) Capstone Project 1
+## Stage 3: DataCamp (Data Engineering in Python) Projects 
 
-### Cleaning Bank Marketing Campaign Data
+- Project 1: Cleaning Bank Marketing Campaign Data
 
 #### Project Instructions
 
@@ -1234,8 +1234,10 @@ print(df_keywords_geo.loc["Philippines", :])
 print(df_keywords_geo.loc["Malaysia", :])
 
 home_workout_geo = "Philippines"
+
 <img width="1963" height="1101" alt="datacamp 1" src="https://github.com/user-attachments/assets/6f378ec3-5713-43dc-901d-a430dd0bbcf2" />
 <img width="1954" height="1101" alt="dc 2" src="https://github.com/user-attachments/assets/76b0206f-e58e-401f-bbc6-c84ecb982dfd" />
+```
 
 ## 📊 Summary of Findings
 
